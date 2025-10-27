@@ -1,11 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blank Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Axis3D — Precision 3D Printing</title>
+  <meta name="description" content="Axis3D — precision, fast-turn 3D printing for prototypes, parts and design in PLA and PETG." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#0f1720;
+      --muted:#6b7178;
+      --accent:#111827;
+      --accent-2:#2b2f36;
+      --glass:rgba(15,23,32,0.06);
+      --maxw:1100px;
+      --radius:10px;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);line-height:1.45}
+    .wrap{max-width:var(--maxw);margin:36px auto;padding:0 20px}
+
+    /* Header / Hero */
+    header.hero{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px;border-radius:12px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand .logo{width:88px;height:88px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(180deg,var(--glass),transparent);border:1px solid rgba(15,23,32,0.06)}
+    .brand h1{font-size:20px;margin:0;letter-spacing:-0.02em}
+    .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+    .hero-cta{display:flex;gap:12px;align-items:center}
+    .btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:9px;border:0;font-weight:600;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(15,23,32,0.06)}
+
+    /* Layout grid */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg, #fff, #fbfbfc);border:1px solid rgba(15,23,32,0.04);padding:18px;border-radius:12px}
+    h2{margin:0 0 10px 0;font-size:18px}
+    p.lead{color:var(--muted);margin:0 0 14px 0}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .service{padding:12px;border-radius:8px;background:var(--glass);border:1px dashed rgba(15,23,32,0.03)}
+    .service h3{margin:0;font-size:14px}
+    .service p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    /* Materials list */
+    .materials{display:flex;gap:10px;flex-wrap:wrap}
+    .mat{padding:8px 10px;border-radius:8px;border:1px solid rgba(15,23,32,0.04);background:#fff;font-weight:600;font-size:13px}
+
+    /* Process */
+    .process{display:flex;flex-direction:column;gap:10px}
+    .step{display:flex;gap:12px;align-items:flex-start}
+    .step .num{width:34px;height:34px;border-radius:8px;background:var(--accent-2);color:#fff;display:grid;place-items:center;font-weight:700}
+    .step p{margin:0;color:var(--muted)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .thumb{background:linear-gradient(180deg,#f7f7f8,#fff);height:100px;border-radius:8px;border:1px solid rgba(15,23,32,0.03);display:grid;place-items:center;color:var(--muted);font-weight:700}
+
+    /* Quote form */
+    form.fieldset{display:flex;flex-direction:column;gap:10px}
+    label{font-size:13px;color:var(--muted)}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid rgba(15,23,32,0.06);font-size:14px}
+    textarea{min-height:120px}
+    .muted-small{font-size:12px;color:var(--muted)}
+
+    footer{margin-top:28px;padding:18px;border-top:1px solid rgba(15,23,32,0.04);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.brand .logo{width:68px;height:68px}}
+    @media (max-width:520px){.services{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}header.hero{flex-direction:column;align-items:flex-start}}
+  </style>
 </head>
 <body>
-    
+  <div class="wrap">
+    <header class="hero">
+      <div class="brand">
+        <div class="logo" id="logoPlace">
+          <!-- Replace with your logo SVG or PNG. Default geometric X/axis mark -->
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <rect x="6" y="22" width="36" height="4" rx="2" fill="#0f1720"/>
+            <rect x="22" y="6" width="4" height="36" rx="2" fill="#0f1720"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Axis3D</h1>
+          <p class="muted-small">Precision 3D printing — prototypes, parts & small-batch production</p>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <button class="btn" onclick="scrollToQuote()">Request a Quote</button>
+        <a class="btn ghost" href="#services">Our Services</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <h2>What we do</h2>
+          <p class="lead">Axis3D offers reliable, industrial-grade FDM printing with a designer's attention to detail. We print prototypes, replacement parts, and finished products in PLA and PETG with optional finishing.</p>
+
+          <div id="services" style="margin-top:12px">
+            <div class="services">
+              <div class="service"><h3>Custom Prints</h3><p>Send your STL or tell us what you need — we’ll print to spec and finish on request.</p></div>
+              <div class="service"><h3>Prototyping</h3><p>Fast iteration for design students, startups, and inventors. Short lead times and honest guidance.</p></div>
+              <div class="service"><h3>Replacement Parts</h3><p>Small-batch, durable parts for home repairs, tools and appliances, measured to fit.</p></div>
+              <div class="service"><h3>Finishing & Assembly</h3><p>Sanding, smoothing, painting, and simple assembly for higher-grade presentation pieces.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <h2>Materials we stock</h2>
+          <p class="lead">We primarily print in PLA and PETG. Other filaments available on request (ABS, TPU, Nylon) for specific use-cases.</p>
+          <div class="materials" style="margin-top:12px">
+            <div class="mat">PLA</div>
+            <div class="mat">PETG</div>
+            <div class="mat">ABS (on request)</div>
+            <div class="mat">TPU (flex)</div>
+            <div class="mat">Nylon (on request)</div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <h2>Our process</h2>
+          <div class="process">
+            <div class="step"><div class="num">1</div><div><strong>Upload / Request</strong><p class="muted-small">Send an STL or describe your part — tell us material and target finish.</p></div></div>
+            <div class="step"><div class="num">2</div><div><strong>Quote & Schedule</strong><p class="muted-small">We’ll provide a transparent quote including material, time, and post-processing.</p></div></div>
+            <div class="step"><div class="num">3</div><div><strong>Production</strong><p class="muted-small">We print, monitor and perform basic finishing. You get photos for confirmation.</p></div></div>
+            <div class="step"><div class="num">4</div><div><strong>Delivery / Pickup</strong><p class="muted-small">Local pickup or postage — packed securely to avoid warping or damage.</p></div></div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <h2>Gallery</h2>
+          <p class="lead">A small selection of recent prints. Replace these placeholders with real photos from your portfolio.</p>
+          <div class="gallery" style="margin-top:12px">
+            <div class="thumb">Phone mount</div>
+            <div class="thumb">Prototype housing</div>
+            <div class="thumb">Replacement gear</div>
+            <div class="thumb">Miniature</div>
+            <div class="thumb">Bracket</div>
+            <div class="thumb">Custom part</div>
+          </div>
+        </section>
+
+      </main>
+
+      <aside>
+        <div class="card">
+          <h2>Get a Quote</h2>
+          <p class="muted-small">Fill the form below with as much detail as possible. Attach your file if you have one.</p>
+          <form id="quoteForm" class="fieldset" onsubmit="submitForm(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" required placeholder="Your name" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+            <label for="service">Service</label>
+            <select id="service" name="service">
+              <option>Custom Print</option>
+              <option>Prototyping</option>
+              <option>Replacement Part</option>
+              <option>Finishing / Assembly</option>
+            </select>
+
+            <label for="material">Preferred Material (optional)</label>
+            <input id="material" name="material" placeholder="PLA / PETG / ABS / TPU" />
+
+            <label for="message">Notes / Dimensions</label>
+            <textarea id="message" name="message" placeholder="Tell us about the part, tolerances, desired finish, colour..."></textarea>
+
+            <label for="file">Attach STL (optional)</label>
+            <input id="file" name="file" type="file" accept=".stl,.obj" />
+
+            <div style="display:flex;gap:10px;margin-top:8px">
+              <button class="btn" type="submit">Send Request</button>
+              <button class="btn ghost" type="button" onclick="resetForm()">Reset</button>
+            </div>
+            <p id="formMsg" class="muted-small" style="margin-top:8px"></p>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Contact</h2>
+          <p class="muted-small">Email: <a href="mailto:hello@axis3d.example">hello@axis3d.example</a><br>Phone: +353 85 000 0000 (replace with yours)</p>
+          <p class="muted-small">Location: Dublin — local pickup available</p>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Pricing guide</h2>
+          <p class="muted-small">Quick reference only — final price depends on material, print time and finish.</p>
+          <ul class="muted-small">
+            <li>Small (≤50g): €6–€15</li>
+            <li>Medium (50–200g): €15–€45</li>
+            <li>Large (200–500g): €45–€120</li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>
+      <div>© <strong>Axis3D</strong> — Precision 3D printing</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="#" class="muted-small">Instagram</a>
+        <a href="#" class="muted-small">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function scrollToQuote(){document.getElementById('quoteForm').scrollIntoView({behavior:'smooth',block:'center'})}
+    function resetForm(){document.getElementById('quoteForm').reset();document.getElementById('formMsg').textContent=''}
+
+    function submitForm(e){
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const service = form.service.value;
+      const message = form.message.value.trim();
+      const file = form.file.files[0];
+
+      if(!name || !email){document.getElementById('formMsg').textContent='Please provide name and email.';return}
+      document.getElementById('formMsg').textContent='Sending...';
+
+      // NOTE: This demo doesn't actually send mail. Replace with your endpoint or email integration.
+      setTimeout(()=>{
+        document.getElementById('formMsg').textContent='Request received. We will reply within 24 hours.';
+        form.reset();
+      },900);
+    }
+  </script>
 </body>
 </html>
