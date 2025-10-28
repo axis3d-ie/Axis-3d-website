@@ -1,34 +1,37 @@
 
-// load the modals as variables
-document.addEventListener('DOMContentLoaded', function() {
-    var modalP = document.getElementById("ModalP");
-    var modalG = document.getElementById("ModalG");
-    var modalO = document.getElementById("ModalO");
+// Declare modal variables globally
+var modalP, modalG, modalO;
 
+// Initialize modals when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    modalP = document.getElementById("ModalP");
+    modalG = document.getElementById("ModalG");
+    modalO = document.getElementById("ModalO");
 });
 
 // When the user clicks the button, open the modal 
 function openP() {
-  modalP.style.display = "block";
+  if (modalP) modalP.style.display = "block";
 }
 function openG() {
-  modalG.style.display = "block";
+  if (modalG) modalG.style.display = "block";
 }
 function openO() {
-  modalO.style.display = "block";
+  if (modalO) modalO.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
 function close() {
-  modalP.style.display = "none";
-  modalG.style.display = "none";
-  modalO.style.display = "none";
+  if (modalP) modalP.style.display = "none";
+  if (modalG) modalG.style.display = "none";
+  if (modalO) modalO.style.display = "none";
 }
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modalP.style.display = "none";
-    modalG.style.display = "none";
-    modalO.style.display = "none";
+  if (event.target == modalP || event.target == modalG || event.target == modalO) {
+    if (modalP) modalP.style.display = "none";
+    if (modalG) modalG.style.display = "none";
+    if (modalO) modalO.style.display = "none";
   }
 }
