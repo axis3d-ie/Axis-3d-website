@@ -21,7 +21,7 @@ function openO() {
 }
 
 // When the user clicks on <span> (x), close the modal
-function close() {
+function closeModal() {
   if (modalP) modalP.style.display = "none";
   if (modalG) modalG.style.display = "none";
   if (modalO) modalO.style.display = "none";
