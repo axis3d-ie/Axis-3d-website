@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="script" src="script.js">
+  <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -297,9 +297,6 @@
   <script>
     function scrollToQuote(){document.getElementById('quoteForm').scrollIntoView({behavior:'smooth',block:'center'})}
     function resetForm(){document.getElementById('quoteForm').reset();document.getElementById('formMsg').textContent=''}
-    
-    function openP(){document.getElementById('ModalP').style.display='block'}
-    function closeP(){document.getElementById('ModalP').style.display='none'}
 
     function submitForm(e){
       e.preventDefault();

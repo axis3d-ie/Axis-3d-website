@@ -3,7 +3,6 @@ var modal = document.getElementById("ModalP");
 
 // When the user clicks the button, open the modal 
 function openP() {
-  alert("test")
   modal.style.display = "block";
 }
 
