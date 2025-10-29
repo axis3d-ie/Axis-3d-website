@@ -48,11 +48,25 @@ Preferred communication style: Simple, everyday language.
    - Pros: Better search engine visibility, professional social sharing, location-based targeting
    - Cons: Requires manual updates if business details change
 
+5. **Favicon Implementation**
+   - Problem: Need professional branding in browser tabs and when users bookmark the site
+   - Solution: Multi-size favicon setup with ICO fallback and Apple touch icon
+   - Rationale: Professional appearance across all browsers and devices, from legacy to modern
+   - Files: favicon.ico (multi-size), favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png (180×180)
+   - Pros: Works across all browsers, optimized for each context, professional appearance
+   - Cons: Requires maintaining multiple image assets
+
 ### Application Structure
 
 **File Organization:**
-- `index.html` - Main page with embedded styles and metadata
+- `index.html` - Main page with embedded styles, metadata, and favicon links
 - `script.js` - Modal functionality and interaction handlers
+- `favicon.ico` - Multi-size favicon for legacy browser support
+- `favicon-16x16.png` - Small favicon for modern browsers
+- `favicon-32x32.png` - Standard favicon for modern browsers
+- `apple-touch-icon.png` - iOS home screen icon (180×180)
+- `icon-dark.png` - Original logo source file
+- Image assets: bull.jpeg, mini-sch.jpg, screw.jpg, mag.jpg - Gallery examples
 
 **Modal System:**
 - Three separate modals (P, G, O) likely representing different service categories or information types
