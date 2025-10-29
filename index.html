@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,7 +85,9 @@
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-    .thumb{background:linear-gradient(180deg,#f7f7f8,#fff);height:100px;border-radius:8px;border:1px solid rgba(15,23,32,0.03);display:grid;place-items:center;color:var(--muted);font-weight:700}
+    .thumb{background:linear-gradient(180deg,#f7f7f8,#fff);height:100px;border-radius:8px;border:1px solid rgba(15,23,32,0.03);display:grid;place-items:center;color:white;font-weight:700}
+    .thumb p{margin:0;padding:0 10px;}
+    .dark{color:var(--ink)}
 
     /* Quote form */
     form.fieldset{display:flex;flex-direction:column;gap:10px}
@@ -123,7 +126,7 @@
       <main>
         <section class="card">
           <h2>What we do</h2>
-          <p class="lead">Axis3D offers reliable, industrial-grade FDM printing with a designer's attention to detail. We print prototypes, replacement parts, and finished products in PLA and PETG.</p>
+          <p class="lead">Axis3D offers reliable, FDM printing with attention to detail. With particular expertise in functional parts such as industrial machinery and feild-grade munition parts. We print prototypes, replacement parts, and finished products in PLA and PETG.</p>
 
           <div id="services" style="margin-top:12px">
             <div class="services">
@@ -136,7 +139,7 @@
 
         <section class="card" style="margin-top:16px">
           <h2>Materials we stock</h2>
-          <p class="lead">We primarily print in PLA and PETG. Other filaments available on request (ABS, TPU, Nylon) for specific use-cases.</p>
+          <p class="lead">We primarily print in PLA and PETG. Other filaments available on request for specific use-cases.</p>
           <div class="materials" style="margin-top:12px">
             <button class="mat" onclick="openP()">PLA</button>
             <button class="mat" onclick="openG()">PETG</button>
@@ -151,11 +154,12 @@
               <h2>PLA</h2>
             </div>
             <div class="modal-body">
-              <p>PLA is the most common material for 3d printed parts. Its low cost, high versatility, and useful strength make it a top pick. Perfect for prototyping, decorative items, and most use caces.</p>
+              <p>PLA is the most common material for 3d printed parts. Its low cost, high versatility, and useful strength make it a top pick. Perfect for prototyping, decorative items, and most use cases. Also bio-degradeable.</p>
               <p>Currently offered in:<br>• Galaxy multicoloured</p>
-              <cite>€0.065 per gram</cite>
+              <cite>€0.04 per gram</cite>
             </div>
           </div>
+        </div>
         <div id="ModalG" class="modal">
           <div class="modal-content">
             <div class="modal-header">
@@ -163,22 +167,22 @@
               <h2>PET-G</h2>
             </div>
             <div class="modal-body">
-              <p>Our top recommendation, PET-G is a middle ground between cost and </p>
-              <p>Some other text...</p>
+              <p>Our top recommendation, PET-G is a middle ground between cost and use ability. Perfect for functional parts its strong and still lightweight, able to resist impacts, and not brittle.</p>
+              <p>Currently offered in:<br>• White<br>• Metallic Grey<br>• Red</p>
+              <cite>€0.065 per gram</cite>
             </div>
           </div>
+        </div>
         <div id="ModalO" class="modal">
           <div class="modal-content">
             <div class="modal-header">
               <button class="close" onclick="closeModal()">&times;</button>
-              <h2>PLA</h2>
+              <h2>Other Filiments</h2>
             </div>
             <div class="modal-body">
-              <p>Some text in the Modal Body</p>
-              <p>Some other text...</p>
+              <p>Although we recommended either PLA or PET-G for a fast turnaround, we may be able to print in other materials, just get in touch!</p>
             </div>
           </div>
-
         </div>
 
 
@@ -194,14 +198,12 @@
 
         <section class="card" style="margin-top:16px">
           <h2>Gallery</h2>
-          <p class="lead">A small selection of recent prints. Replace these placeholders with real photos from your portfolio.</p>
+          <p class="lead">A small selection of recent prints.</p>
           <div class="gallery" style="margin-top:12px">
-            <div class="thumb">Phone mount</div>
-            <div class="thumb">Prototype housing</div>
-            <div class="thumb">Replacement gear</div>
-            <div class="thumb">Miniature</div>
-            <div class="thumb">Bracket</div>
-            <div class="thumb">Custom part</div>
+            <div class="thumb" style="background: url(mini-sch.jpg) no-repeat center; background-size: cover;"><p class="dark">Miniature Schnauzer</p></div>
+            <div class="thumb" style="background: url(bull.jpeg) no-repeat center; background-size: cover;"><p>AirSoft Modifications</p></div>
+            <div class="thumb" style="background: url(screw.jpg) no-repeat center; background-size: cover;"><p>Industrial Mechanisms</p></div>
+            <div class="thumb" style="background: url(mag.jpg) no-repeat center; background-size: cover;"><p class="dark">Parts & Accessories</p></div>
           </div>
         </section>
 
@@ -209,55 +211,25 @@
 
       <aside>
         <div class="card">
-          <h2>Get a Quote</h2>
-          <p class="muted-small">Fill the form below with as much detail as possible. Attach your file if you have one.</p>
-          <form id="quoteForm" class="fieldset" onsubmit="submitForm(event)">
-            <label for="name">Name</label>
-            <input id="name" name="name" required placeholder="Your name" />
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com" />
-
-            <label for="service">Service</label>
-            <select id="service" name="service">
-              <option>Custom Print</option>
-              <option>Prototyping</option>
-              <option>Replacement Part</option>
-              <option>Finishing / Assembly</option>
-            </select>
-
-            <label for="material">Preferred Material (optional)</label>
-            <input id="material" name="material" placeholder="PLA / PETG / ABS / TPU" />
-
-            <label for="message">Notes / Dimensions</label>
-            <textarea id="message" name="message" placeholder="Tell us about the part, tolerances, desired finish, colour..."></textarea>
-
-            <label for="file">Attach STL (optional)</label>
-            <input id="file" name="file" type="file" accept=".stl,.obj" />
-
-            <div style="display:flex;gap:10px;margin-top:8px">
-              <button class="btn" type="submit">Send Request</button>
-              <button class="btn ghost" type="button" onclick="resetForm()">Reset</button>
-            </div>
-            <p id="formMsg" class="muted-small" style="margin-top:8px"></p>
-          </form>
+          <div style="width:100%; height:500px;" data-fillout-id="uLjjV8WYS3us" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+          <script src="https://server.fillout.com/embed/v1/"></script>
         </div>
 
         <div class="card" style="margin-top:16px">
           <h2>Contact</h2>
-          <p class="muted-small">Email: <a href="mailto:hello@axis3d.example">hello@axis3d.example</a><br>Phone: +353 85 000 0000 (replace with yours)</p>
+          <p class="muted-small">Email: <a href="mailto:info.axis3d@gmail.com">info.axis3d@gmail.com</a></p>
           <p class="muted-small">Location: Dublin — local pickup available</p>
         </div>
 
-        <div class="card" style="margin-top:16px">
+        <!--<div class="card" style="margin-top:16px">
           <h2>Pricing guide</h2>
           <p class="muted-small">Quick reference only — final price depends on material, print time and finish.</p>
           <ul class="muted-small">
-            <li>Small (≤50g): €6–€15</li>
-            <li>Medium (50–200g): €15–€45</li>
+            <li>Material by weight (grams)</li>
+            <li>Initialisation</li>
             <li>Large (200–500g): €45–€120</li>
           </ul>
-        </div>
+        </div>-->
 
       </aside>
     </div>
@@ -272,27 +244,9 @@
   </div>
 
   <script>
-    function scrollToQuote(){document.getElementById('quoteForm').scrollIntoView({behavior:'smooth',block:'center'})}
-    function resetForm(){document.getElementById('quoteForm').reset();document.getElementById('formMsg').textContent=''}
-
-    function submitForm(e){
-      e.preventDefault();
-      const form = e.target;
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const service = form.service.value;
-      const message = form.message.value.trim();
-      const file = form.file.files[0];
-
-      if(!name || !email){document.getElementById('formMsg').textContent='Please provide name and email.';return}
-      document.getElementById('formMsg').textContent='Sending...';
-
-      // NOTE: This demo doesn't actually send mail. Replace with your endpoint or email integration.
-      setTimeout(()=>{
-        document.getElementById('formMsg').textContent='Request received. We will reply within 24 hours.';
-        form.reset();
-      },900);
-    }
+    function scrollToQuote(){document.getElementById('quoteForm').scrollIntoView({behavior:'smooth',block:'center'})};
+    var slideUp = {distance: '150%',origin: 'bottom',opacity: null};
+    ScrollReveal().reveal('.card', slideUp);
   </script>
 </body>
 </html>
