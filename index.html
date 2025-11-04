@@ -20,54 +20,38 @@
   
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://axis3d.com/" />
+  <meta property="og:url" content="https://axis3d.ie.eu.org/" />
   <meta property="og:title" content="Axis3D — Precision 3D Printing Dublin" />
   <meta property="og:description" content="Professional 3D printing service in Dublin. Fast-turn prototypes, custom prints, and replacement parts in PLA & PETG. Industrial-grade quality, short lead times." />
-  <meta property="og:image" content="https://axis3d.com/icon-dark.png" />
+  <meta property="og:image" content="assets/icon-dark.png" />
   <meta property="og:site_name" content="Axis3D" />
   <meta property="og:locale" content="en_IE" />
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://axis3d.com/" />
+  <meta name="twitter:url" content="https://axis3d.ie.eu.org/" />
   <meta name="twitter:title" content="Axis3D — Precision 3D Printing Dublin" />
   <meta name="twitter:description" content="Professional 3D printing service in Dublin. Fast-turn prototypes, custom prints, and replacement parts in PLA & PETG." />
-  <meta name="twitter:image" content="https://axis3d.com/icon-dark.png" />
+  <meta name="twitter:image" content="assets/icon-dark.png" />
   
   <!-- Additional Meta Tags -->
   <meta name="theme-color" content="#1E2029" />
-  <link rel="canonical" href="https://axis3d.com/" />
+  <link rel="canonical" href="https://axis3d.ie.eu.org/" />
   
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+
+  <!-- Scripts -->
+  <link rel="stylesheet" href="main.css">
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#ffffff;
-      --ink:#0f1720;
-      --muted:#6b7178;
-      --accent:#1E2029;
-      --accent-2:#2b2f36;
-      --glass:rgba(15,23,32,0.06);
-      --maxw:1100px;
-      --radius:10px;
-      font-family: "Outfit", sans-serif;
-      font-optical-sizing: auto;
-      font-style: normal;
-      scroll-behavior: smooth;
-    }
-    *{box-sizing:border-box; }
-    body{margin:0;background:var(--bg);color:var(--ink);line-height:1.45}
-    .wrap{max-width:var(--maxw);margin:36px auto;padding:0 20px}
-
     /* Header / Hero */
     header.hero{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px;border-radius:12px}
     .brand{display:flex;align-items:center;gap:14px}
@@ -129,17 +113,14 @@
     .dark{color:var(--ink)}
 
     /* Quote form */
-    form.fieldset{display:flex;flex-direction:column;gap:10px}
-    label{font-size:13px;color:var(--muted)}
-    input,textarea,select{padding:10px;border-radius:8px;border:1px solid rgba(15,23,32,0.06);font-size:14px}
-    textarea{min-height:120px}
     .muted-small{font-size:12px;color:var(--muted)}
-
+    
     footer{margin-top:28px;padding:18px;border-top:1px solid rgba(15,23,32,0.04);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
-
+    
     /* Responsive */
     @media (max-width:900px){.grid{grid-template-columns:1fr}.brand .logo{width:150px;height:150px}}
     @media (max-width:520px){.services{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}header.hero{flex-direction:column;align-items:flex-start}}
+    
   </style>
 </head>
 <body>
@@ -147,7 +128,7 @@
     <header class="hero">
       <div class="brand">
         <div class="logo" id="logoPlace">
-          <img src="icon-dark.png" alt="axis3D logo" >
+          <img src="assets/icon-dark.png" alt="axis3D logo" >
         </div>
         <div>
           <h1>Axis3D</h1>
@@ -166,12 +147,15 @@
         <section class="card">
           <h2>What we do</h2>
           <p class="lead">Axis3D offers reliable, FDM printing with attention to detail. With particular expertise in functional parts such as industrial machinery and feild-grade munition parts. We print prototypes, replacement parts, and finished products in PLA and PETG.</p>
-
+          <p class="lead">We're not just another print farm, so you're not just another number.</p>
+          <p class="lead">All our parts are made to the highest quality, accurate to 100 microns <sub> (thats 10 thousand times smaller than a meter)</sub>.</p>
+          
           <div id="services" style="margin-top:12px">
             <div class="services">
               <div class="service"><h3>Custom Prints</h3><p>Send your STL or tell us what you need — we’ll print to spec and finish on request.</p></div>
               <div class="service"><h3>Prototyping</h3><p>Fast iteration for design students, startups, and inventors. Short lead times and honest guidance.</p></div>
-              <div class="service"><h3>Replacement Parts</h3><p>Small-batch, durable parts for home repairs, tools and appliances, measured to fit.</p></div>
+              <div class="service"><h3>Replacement Parts</h3><p>Once-off, durable parts for home repairs, tools and appliances, measured to fit.</p></div>
+              <div class="service"><h3>Small-batch Production</h3><p>Custom parts for small-batch production runs. We’ll help you get your product to market.</p></div>
             </div>
           </div>
         </section>
@@ -180,9 +164,9 @@
           <h2>Materials we stock</h2>
           <p class="lead">We primarily print in PLA and PETG. Other filaments available on request for specific use-cases.</p>
           <div class="materials" style="margin-top:12px">
-            <button class="mat" onclick="openP()">PLA</button>
-            <button class="mat" onclick="openG()">PETG</button>
-            <button class="mat" onclick="openO()">Other</button>
+            <button class="mat" onclick="openP()">> PLA <</button>
+            <button class="mat" onclick="openG()">> PETG <</button>
+            <button class="mat" onclick="openO()">> Other <</button>
           </div>
         </section>
         
@@ -206,7 +190,7 @@
               <h2>PET-G</h2>
             </div>
             <div class="modal-body">
-              <p>Our top recommendation, PET-G is a middle ground between cost and use ability. Perfect for functional parts its strong and still lightweight, able to resist impacts, and not brittle.</p>
+              <p>Our top recommendation, PET-G is a middle ground between cost and usability. Perfect for functional parts its strong and still lightweight, able to resist impacts, and not brittle.</p>
               <p>Currently offered in:<br>• White<br>• Metallic Grey<br>• Red</p>
               <cite>€0.065 per gram</cite>
             </div>
@@ -228,10 +212,10 @@
         <section class="card" style="margin-top:16px">
           <h2>Our process</h2>
           <div class="process">
-            <div class="step"><div class="num">1</div><div><strong>Upload / Request</strong><p class="muted-small">Send an STL or describe your part — tell us material and target finish.</p></div></div>
-            <div class="step"><div class="num">2</div><div><strong>Quote & Schedule</strong><p class="muted-small">We’ll provide a transparent quote including material, time, and post-processing.</p></div></div>
+            <div class="step"><div class="num">1</div><div><strong>Request</strong><p class="muted-small">Send an STL or describe your part — tell us material and target finish.</p></div></div>
+            <div class="step"><div class="num">2</div><div><strong>Prepare</strong><p class="muted-small">We’ll provide a transparent quote including material, time, and post-processing.</p></div></div>
             <div class="step"><div class="num">3</div><div><strong>Production</strong><p class="muted-small">We print, monitor and perform basic finishing. You get photos for confirmation.</p></div></div>
-            <div class="step"><div class="num">4</div><div><strong>Delivery / Pickup</strong><p class="muted-small">Local pickup or postage — packed securely to avoid warping or damage.</p></div></div>
+            <div class="step"><div class="num">4</div><div><strong>Delivery</strong><p class="muted-small">Local pickup or postage — packed securely to avoid warping or damage.</p></div></div>
           </div>
         </section>
 
@@ -239,17 +223,18 @@
           <h2>Gallery</h2>
           <p class="lead">A small selection of recent prints.</p>
           <div class="gallery" style="margin-top:12px">
-            <div class="thumb" style="background: url(mini-sch.jpg) no-repeat center; background-size: cover;"><p class="dark">Miniature Schnauzer</p></div>
-            <div class="thumb" style="background: url(bull.jpeg) no-repeat center; background-size: cover;"><p>AirSoft Modifications</p></div>
-            <div class="thumb" style="background: url(screw.jpg) no-repeat center; background-size: cover;"><p>Industrial Mechanisms</p></div>
-            <div class="thumb" style="background: url(mag.jpg) no-repeat center; background-size: cover;"><p class="dark">Parts & Accessories</p></div>
+            <a href="gallery.html"><div class="thumb" style="background: url(assets/mini-sch-zoom.JPG) no-repeat center; background-size: cover;"><p>Miniature Schnauzer</p></div></a>
+            <a href="gallery.html"><div class="thumb" style="background: url(assets/barrel.JPG) no-repeat center; background-size: cover;"><p>AirSoft Modifications</p></div></a>
+            <!--<div class="thumb" style="background: url(assets/bull.jpeg) no-repeat center; background-size: cover;"><p>AirSoft Modifications</p></div>-->
+            <a href="gallery.html"><div class="thumb" style="background: url(assets/screw.jpg) no-repeat center; background-size: cover;"><p>Industrial Mechanisms</p></div></a>
+            <a href="gallery.html"><div class="thumb" style="background: url(assets/mag.jpg) no-repeat center; background-size: cover;"><p class="dark">Parts & Accessories</p></div></a>
           </div>
         </section>
 
       </main>
 
       <aside>
-        <div class="card">
+        <div class="card" id="quoteForm">
           <div style="width:100%; height:500px;" data-fillout-id="uLjjV8WYS3us" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
           <script src="https://server.fillout.com/embed/v1/"></script>
         </div>
@@ -277,7 +262,7 @@
       <div>© <strong>Axis3D</strong> — Precision 3D printing</div>
       <div style="display:flex;gap:12px;align-items:center">
         <a href="#" class="muted-small">Instagram</a>
-        <a href="#" class="muted-small">LinkedIn</a>
+        <!--<a href="#" class="muted-small">LinkedIn</a>-->
       </div>
     </footer>
   </div>
