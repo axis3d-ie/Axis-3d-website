@@ -74,15 +74,21 @@
     .brand p{margin:0;font-size:12px;color:rgba(255,255,255,0.7)}
 
     .hero-cta{display:flex;gap:12px;align-items:center}
-    .btn{background:#fff;color:var(--accent);padding:10px 16px;border-radius:9px;border:0;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+    .btn{background:#fff;color:var(--accent);padding:10px 16px;border-radius:9px;border:0;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s;white-space:nowrap;}
     .btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.15);}
     .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3)}
     .btn.ghost:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
     .btn.quote{background:var(--accent-2);color:#fff;}
 
-    /* Responsive */
+    /* Gallery */
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px;}
+    .photo{width:100%;height:auto;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:transform 0.2s;}
+    .photo:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+    
+       /* Responsive */
     @media (max-width:768px){
       .btn.quote{display:none;}
+      .gallery{grid-template-columns:1,1fr;}
     }
     @media (max-width:520px){
       header.hero{padding:0px 16px;}
@@ -91,6 +97,7 @@
       .brand p{display:none;}
       .hero-cta{gap:8px;}
       .btn{padding:8px 12px;font-size:14px;}
+      .gallery{grid-template-columns:1,1fr;}
     }
     
   </style>
@@ -113,6 +120,11 @@
       <a class="btn ghost" href="index.html">Home</a>
     </div>
   </header>
+  <div class="wrap">
+    <div class="grid">
+       <img src="assets/barrel.JPG" alt="Airsoft Modifications" class="photo">
+    </div>
+  </div>
   
 
 
