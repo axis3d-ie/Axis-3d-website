@@ -51,7 +51,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-
+  <script src="https://unpkg.com/scrollreveal"></script>
+  
   <style>
      /* Header / Hero - Sticky Navigation */
     header.hero{
@@ -74,16 +75,18 @@
     .brand p{margin:0;font-size:12px;color:rgba(255,255,255,0.7)}
 
     .hero-cta{display:flex;gap:12px;align-items:center}
-    .btn{background:#fff;color:var(--accent);padding:10px 16px;border-radius:9px;border:0;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s;white-space:nowrap;}
+    .btn{background:var(--bg);color:var(--accent);padding:10px 16px;border-radius:9px;border:0;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s;white-space:nowrap;}
     .btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.15);}
     .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3)}
     .btn.ghost:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
-    .btn.quote{background:var(--accent-2);color:#fff;}
+    .btn.quote{color:var(--accent);}
 
     /* Gallery */
     .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px;}
-    .photo{width:100%;height:auto;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:transform 0.2s;}
-    .photo:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+    .photo-wrapper{overflow:hidden;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:transform 0.2s;}
+    .photo-wrapper:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+    .photo{width:100%;height:auto;display:block;transition:transform 0.3s ease;}
+    .photo:hover{transform:scale(1.3);}
     
        /* Responsive */
     @media (max-width:768px){
@@ -122,12 +125,23 @@
   </header>
   <div class="wrap">
     <div class="grid">
-       <img src="assets/barrel.JPG" alt="Airsoft Modifications" class="photo">
+      <div class="photo-wrapper"><img src="gallery-photos/airsoft/brl-front2.JPG" alt="Airsoft barrel front on" class="photo"></div>
+      <div class="photo-wrapper"><img src="gallery-photos/airsoft/brl-side.JPG" alt="Airsoft barrel side on" class="photo"></div>
+      <div class="photo-wrapper"><img src="gallery-photos/airsoft/brl-top.JPG" alt="Airsoft barrel front on" class="photo"></div>
+      <div class="photo-wrapper"><img src="gallery-photos/airsoft/brl-front.JPG" alt="Airsoft barrel side on" class="photo"></div>
+      
+      <div class="photo-wrapper"><img src="gallery-photos/mini-sch/sch-top.JPG" alt="Miniature Schnauzer from the top" class="photo"></div>
+      <div class="photo-wrapper"><img src="gallery-photos/mini-sch/sch-front.JPG" alt="white Minatire schnauzer model" class="photo"></div>
+      <div class="photo-wrapper"><img src="gallery-photos/mini-sch/sch-top2.JPG" alt="Minature schnauzer with good layer detail" class="photo"></div>
     </div>
   </div>
   
 
 
   
+
+  <script>
+    ScrollReveal().reveal('.photo-wrapper', slideUp);
+  </script>
 </body>
 </html>
