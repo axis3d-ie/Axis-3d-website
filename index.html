@@ -107,15 +107,17 @@
     .step p{margin:0;color:var(--muted)}
 
     /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
     .thumb{background:linear-gradient(180deg,#f7f7f8,#fff);height:100px;border-radius:8px;border:1px solid rgba(15,23,32,0.03);display:grid;place-items:center;color:white;font-weight:700}
     .thumb p{margin:0;padding:0 10px;}
     .dark{color:var(--ink)}
 
     /* Quote form */
     .muted-small{font-size:12px;color:var(--muted)}
-    
+
+    /* Footer */
     footer{margin-top:28px;padding:18px;border-top:1px solid rgba(15,23,32,0.04);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    .center{text-align:center}
     
     /* Responsive */
     @media (max-width:900px){.grid{grid-template-columns:1fr}.brand .logo{width:150px;height:150px}}
@@ -146,13 +148,13 @@
       <main>
         <section class="card">
           <h2>What we do</h2>
-          <p class="lead">Axis3D offers reliable, FDM printing with attention to detail. With particular expertise in functional parts such as industrial machinery and feild-grade munition parts. We print prototypes, replacement parts, and finished products in PLA and PETG.</p>
+          <p class="lead">Axis3D offers reliable, FDM printing with attention to detail. With particular expertise in functional parts with real world and industrial uses. We print prototypes, replacement parts, and finished products in PLA and PETG.</p>
           <p class="lead">We're not just another print farm, so you're not just another number.</p>
-          <p class="lead">All our parts are made to the highest quality, accurate to 100 microns <sub> (thats 10 thousand times smaller than a meter)</sub>.</p>
+          <p class="lead">All our parts are made to the highest quality, accurate to 100 microns<sup>†</sup> <sub> (thats 10 thousand times smaller than a meter)</sub>.</p>
           
           <div id="services" style="margin-top:12px">
             <div class="services">
-              <div class="service"><h3>Custom Prints</h3><p>Send your STL or tell us what you need — we’ll print to spec and finish on request.</p></div>
+              <div class="service"><h3>Custom Prints</h3><p>Send your STL or tell us what you need — we’ll print to spec and hand finish on request.</p></div>
               <div class="service"><h3>Prototyping</h3><p>Fast iteration for design students, startups, and inventors. Short lead times and honest guidance.</p></div>
               <div class="service"><h3>Replacement Parts</h3><p>Once-off, durable parts for home repairs, tools and appliances, measured to fit.</p></div>
               <div class="service"><h3>Small-batch Production</h3><p>Custom parts for small-batch production runs. We’ll help you get your product to market.</p></div>
@@ -213,8 +215,8 @@
           <h2>Our process</h2>
           <div class="process">
             <div class="step"><div class="num">1</div><div><strong>Request</strong><p class="muted-small">Send an STL or describe your part — tell us material and target finish.</p></div></div>
-            <div class="step"><div class="num">2</div><div><strong>Prepare</strong><p class="muted-small">We’ll provide a transparent quote including material, time, and post-processing.</p></div></div>
-            <div class="step"><div class="num">3</div><div><strong>Production</strong><p class="muted-small">We print, monitor and perform basic finishing. You get photos for confirmation.</p></div></div>
+            <div class="step"><div class="num">&nbsp&nbsp2&nbsp&nbsp</div><div><strong>Prepare</strong><p class="muted-small">We’ll review your part for printing, then provide a transparent quote including material, time, and post-processing.</p></div></div>
+            <div class="step"><div class="num">3</div><div><strong>Production</strong><p class="muted-small">We print, monitor and finish up the part. You get photos for confirmation.</p></div></div>
             <div class="step"><div class="num">4</div><div><strong>Delivery</strong><p class="muted-small">Local pickup or postage — packed securely to avoid warping or damage.</p></div></div>
           </div>
         </section>
@@ -225,7 +227,6 @@
           <div class="gallery" style="margin-top:12px">
             <a href="gallery.html"><div class="thumb" style="background: url(assets/mini-sch-zoom.JPG) no-repeat center; background-size: cover;"><p>Miniature Schnauzer</p></div></a>
             <a href="gallery.html"><div class="thumb" style="background: url(assets/barrel.JPG) no-repeat center; background-size: cover;"><p>AirSoft Modifications</p></div></a>
-            <!--<div class="thumb" style="background: url(assets/bull.jpeg) no-repeat center; background-size: cover;"><p>AirSoft Modifications</p></div>-->
             <a href="gallery.html"><div class="thumb" style="background: url(assets/screw.jpg) no-repeat center; background-size: cover;"><p>Industrial Mechanisms</p></div></a>
             <a href="gallery.html"><div class="thumb" style="background: url(assets/mag.jpg) no-repeat center; background-size: cover;"><p class="dark">Parts & Accessories</p></div></a>
           </div>
@@ -248,11 +249,11 @@
         <div class="card" style="margin-top:16px">
           <h2>Pricing guide</h2>
           <ul class="muted-small">
-            <li>Transparent and simple.</li>
-            <li>Material use (grams) + Part fee. Simple.</li>
+            <li>Material use (grams) + Part fee.</li>
+            <li>Delivery to all of Ireland from as little as €5</li>
           </ul>
-          <p class="muted-small">Quick reference only — final price depends on material, print time and finish.<br>
-          <sub>Fees apply for XL prints</sub></p>
+          <p class="muted-small">Quick reference only<br>
+          <sub>Fees apply for large prints</sub></p>
         </div>
 
       </aside>
@@ -264,9 +265,12 @@
         <a href="#" class="muted-small">Instagram</a>
         <!--<a href="#" class="muted-small">LinkedIn</a>-->
       </div>
+      <div style="display:block;">
+        <p class="muted-small"><sub>† 100 micron measurement from machinery manufacturer Voxelab.</sub></p>
+        <p class="muted-small center"><sub><a>T's & C's</a></sub></p>
+      </div>
     </footer>
-  </div>
-
+  
   <script>
     function scrollToQuote(){document.getElementById('quoteForm').scrollIntoView({behavior:'smooth',block:'center'})};
     var slideUp = {distance: '150%',origin: 'bottom',opacity: null};
