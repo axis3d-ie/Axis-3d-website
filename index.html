@@ -116,7 +116,8 @@
     .muted-small{font-size:12px;color:var(--muted)}
 
     /* Footer */
-    footer{margin-top:28px;padding:18px;border-top:1px solid rgba(15,23,32,0.04);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    footer{margin-top:28px;padding:18px;border-top:1px solid rgba(15,23,32,0.04);color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    footer > div:last-child{width:100%;margin-top:12px;}
     .center{text-align:center}
     
     /* Responsive */
@@ -267,7 +268,10 @@
       </div>
       <div style="display:block;">
         <p class="muted-small"><sub>† 100 micron measurement from machinery manufacturer Voxelab.</sub></p>
-        <p class="muted-small center"><sub><a>T's & C's</a></sub></p>
+        <p class="muted-small center"><sub>
+          <a href="/legal/index.html">T's & C's</a>
+          <a href="legal/privacy-policy.html">Privacy Policy</a>
+        </sub></p>
       </div>
     </footer>
   
