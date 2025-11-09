@@ -23,7 +23,7 @@
   <meta property="og:url" content="https://axis3d.ie.eu.org/" />
   <meta property="og:title" content="Axis3D — Precision 3D Printing Dublin" />
   <meta property="og:description" content="Professional 3D printing service in Dublin. Fast-turn prototypes, custom prints, and replacement parts in PLA & PETG. Industrial-grade quality, short lead times." />
-  <meta property="og:image" content="assets/icon-dark.png" />
+  <meta property="og:image" content="assets/img/icon-dark.png" />
   <meta property="og:site_name" content="Axis3D" />
   <meta property="og:locale" content="en_IE" />
   
@@ -32,22 +32,21 @@
   <meta name="twitter:url" content="https://axis3d.ie.eu.org/" />
   <meta name="twitter:title" content="Axis3D — Precision 3D Printing Dublin" />
   <meta name="twitter:description" content="Professional 3D printing service in Dublin. Fast-turn prototypes, custom prints, and replacement parts in PLA & PETG." />
-  <meta name="twitter:image" content="assets/icon-dark.png" />
+  <meta name="twitter:image" content="assets/img/icon-dark.png" />
   
   <!-- Additional Meta Tags -->
   <meta name="theme-color" content="#1E2029" />
   <link rel="canonical" href="https://axis3d.ie.eu.org/" />
   
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
 
   <!-- Scripts -->
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="assets/css/main.css">
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -110,7 +109,7 @@
   <header class="hero">
     <a href="index.html" class="brand">
       <div class="logo">
-        <img src="assets/logo-dark.png" alt="Axis3D logo">
+        <img src="assets/img/logo-dark.png" alt="Axis3D logo">
       </div>
       <div>
         <h1>Gallery</h1>
@@ -125,7 +124,7 @@
   </header>
   <div class="wrap">
     <div class="grid">
-      <div class="photo-wrapper"><img src="gallery-photos/airsoft/brl-front2.JPG" alt="Airsoft barrel front on" class="photo"></div>
+      <div class="photo-wrapper"><img src="gallery-photos/airsoft/brl-front2.JPG" alt="Airsoft barrel front on" class="photo" loading="lazy"></div>
       <div class="photo-wrapper"><img src="gallery-photos/airsoft/brl-side.JPG" alt="Airsoft barrel side on" class="photo"></div>
       <div class="photo-wrapper"><img src="gallery-photos/airsoft/brl-top.JPG" alt="Airsoft barrel front on" class="photo"></div>
       <div class="photo-wrapper"><img src="gallery-photos/airsoft/brl-front.JPG" alt="Airsoft barrel side on" class="photo"></div>
@@ -148,5 +147,9 @@
     var slideUp = {distance: '150%',origin: 'bottom',opacity: null};
     ScrollReveal().reveal('.photo-wrapper', slideUp);
   </script>
+  <link rel="stylesheet" href="/assets/css/cookie-banner.css">
+  <div id="cookie-consent-root"></div>
+  <script src="/assets/js/cookie-banner.js" defer></script>
+  
 </body>
 </html>

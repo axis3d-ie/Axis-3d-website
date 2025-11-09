@@ -1,0 +1,94 @@
+/* cookie-banner.css - minimal GDPR-friendly styling for cookie consent banner */
+
+:root{
+  --panel-bg: #222;
+  --panel-color: #fff;
+  --radius: 8px;
+  --z: 99999;
+}
+#cookie-consent-root { font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+/* Banner */
+.cc-banner {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--panel-bg);
+  color: var(--panel-color);
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: var(--z);
+  flex-wrap: wrap;
+}
+
+.cc-banner p { margin: 0; font-size: 14px; color: #eee; flex: 1 1 60%; min-width: 220px; }
+.cc-banner a {var(--muted); text-decoration: underline; }
+
+/* Buttons */
+.cc-actions { display:flex; gap:8px; flex: 1 1 36%; justify-content:flex-end; min-width: 200px; }
+.cc-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: inherit;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.cc-btn.primary {
+  background: var(--accent-2);
+  color: #fff;
+  border: none;
+}
+.cc-btn.ghost { background: transparent; }
+
+/* Modal (settings) */
+.cc-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: calc(var(--z) + 10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cc-modal {
+  background: #fff;
+  color: #222;
+  padding: 18px;
+  border-radius: 8px;
+  max-width: 720px;
+  width: 94%;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+.cc-modal h3 { margin-top: 0; color: var(--accent); }
+.cc-cookie-row { display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid #eee; }
+.cc-cookie-desc { font-size: 14px; color: var(--muted); max-width: 70%; }
+
+/* Manage button (sticky small) */
+.cc-manage {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: var(--muted);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  z-index: calc(var(--z) - 1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-decoration: none;
+}
+
+/* Responsive tweaks */
+@media (max-width:600px){
+  .cc-banner { flex-direction: column; align-items: stretch; }
+  .cc-actions { justify-content: flex-start; }
+}

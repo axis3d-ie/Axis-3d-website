@@ -23,7 +23,7 @@
   <meta property="og:url" content="https://axis3d.ie.eu.org/" />
   <meta property="og:title" content="Axis3D — Precision 3D Printing Dublin" />
   <meta property="og:description" content="Professional 3D printing service in Dublin. Fast-turn prototypes, custom prints, and replacement parts in PLA & PETG. Industrial-grade quality, short lead times." />
-  <meta property="og:image" content="assets/icon-dark.png" />
+  <meta property="og:image" content="assets/img/icon-dark.png" />
   <meta property="og:site_name" content="Axis3D" />
   <meta property="og:locale" content="en_IE" />
   
@@ -32,22 +32,22 @@
   <meta name="twitter:url" content="https://axis3d.ie.eu.org/" />
   <meta name="twitter:title" content="Axis3D — Precision 3D Printing Dublin" />
   <meta name="twitter:description" content="Professional 3D printing service in Dublin. Fast-turn prototypes, custom prints, and replacement parts in PLA & PETG." />
-  <meta name="twitter:image" content="assets/icon-dark.png" />
+  <meta name="twitter:image" content="assets/img/icon-dark.png" />
   
   <!-- Additional Meta Tags -->
   <meta name="theme-color" content="#1E2029" />
   <link rel="canonical" href="https://axis3d.ie.eu.org/" />
   
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
 
   <!-- Scripts -->
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="assets/css/main.css">
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -119,6 +119,7 @@
     footer{margin-top:28px;padding:18px;border-top:1px solid rgba(15,23,32,0.04);color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
     footer > div:last-child{width:100%;margin-top:12px;}
     .center{text-align:center}
+    a {color:var(--muted);text-decoration:none}
     
     /* Responsive */
     @media (max-width:900px){.grid{grid-template-columns:1fr}.brand .logo{width:150px;height:150px}}
@@ -131,7 +132,7 @@
     <header class="hero">
       <div class="brand">
         <div class="logo" id="logoPlace">
-          <img src="assets/icon-dark.png" alt="axis3D logo" >
+          <img src="assets/img/icon-dark.png" alt="axis3D logo" >
         </div>
         <div>
           <h1>Axis3D</h1>
@@ -182,7 +183,7 @@
             <div class="modal-body">
               <p>PLA is the most common material for 3d printed parts. Its low cost, high versatility, and useful strength make it a top pick. Perfect for prototyping, decorative items, and most use cases. Also bio-degradeable.</p>
               <p>Currently offered in:<br>• Galaxy multicoloured</p>
-              <cite>€0.04 per gram</cite>
+              <cite>€0.06 per gram</cite>
             </div>
           </div>
         </div>
@@ -195,7 +196,7 @@
             <div class="modal-body">
               <p>Our top recommendation, PET-G is a middle ground between cost and usability. Perfect for functional parts its strong and still lightweight, able to resist impacts, and not brittle.</p>
               <p>Currently offered in:<br>• White<br>• Metallic Grey<br>• Red</p>
-              <cite>€0.065 per gram</cite>
+              <cite>€0.09 per gram</cite>
             </div>
           </div>
         </div>
@@ -226,10 +227,10 @@
           <h2>Gallery</h2>
           <p class="lead">A small selection of recent prints.</p>
           <div class="gallery" style="margin-top:12px">
-            <a href="gallery.html"><div class="thumb" style="background: url(assets/mini-sch-zoom.JPG) no-repeat center; background-size: cover;"><p>Miniature Schnauzer</p></div></a>
-            <a href="gallery.html"><div class="thumb" style="background: url(assets/barrel.JPG) no-repeat center; background-size: cover;"><p>AirSoft Modifications</p></div></a>
-            <a href="gallery.html"><div class="thumb" style="background: url(assets/screw.jpg) no-repeat center; background-size: cover;"><p>Industrial Mechanisms</p></div></a>
-            <a href="gallery.html"><div class="thumb" style="background: url(assets/mag.jpg) no-repeat center; background-size: cover;"><p class="dark">Parts & Accessories</p></div></a>
+            <a href="gallery.html"><div class="thumb" style="background: url(assets/img/mini-sch-zoom.JPG) no-repeat center; background-size: cover;"><p>Miniature Schnauzer</p></div></a>
+            <a href="gallery.html"><div class="thumb" style="background: url(assets/img/barrel.JPG) no-repeat center; background-size: cover;"><p>AirSoft Modifications</p></div></a>
+            <a href="gallery.html"><div class="thumb" style="background: url(assets/img/screw.jpg) no-repeat center; background-size: cover;"><p>Industrial Mechanisms</p></div></a>
+            <a href="gallery.html"><div class="thumb" style="background: url(assets/img/mag.jpg) no-repeat center; background-size: cover;"><p class="dark">Parts & Accessories</p></div></a>
           </div>
         </section>
 
@@ -250,13 +251,20 @@
         <div class="card" style="margin-top:16px">
           <h2>Pricing guide</h2>
           <ul class="muted-small">
-            <li>Material use (grams) + Part fee.</li>
+            <li>Material use (grams) + €5 handling fee.</li>
             <li>Delivery to all of Ireland from as little as €5</li>
           </ul>
           <p class="muted-small">Quick reference only<br>
           <sub>Fees apply for large prints</sub></p>
         </div>
 
+        <div class="card" style="margin-top:16px">
+          <h2>Good to know</h2>
+          <p class="muted-small">Most parts can be shipped out in under a week.</p>
+          <p class="muted-small">We use An Post for delivery, usually your order arrives the very next day after dispatch.</p>
+          <p class="muted-small">Our current max print size is 220×220×240 mm <sub>L×W×H</sub>.</p>
+          <p class="muted-small">We can print larger parts, for example by splitting into smaller models, just get in touch! </p>
+          
       </aside>
     </div>
 
@@ -270,15 +278,19 @@
         <p class="muted-small"><sub>† 100 micron measurement from machinery manufacturer Voxelab.</sub></p>
         <p class="muted-small center"><sub>
           <a href="/legal/index.html">T's & C's</a>
-          <a href="legal/privacy-policy.html">Privacy Policy</a>
+          <!--<a href="legal/privacy-policy.html">Privacy Policy</a>-->
         </sub></p>
       </div>
     </footer>
   
-  <script>
-    function scrollToQuote(){document.getElementById('quoteForm').scrollIntoView({behavior:'smooth',block:'center'})};
-    var slideUp = {distance: '150%',origin: 'bottom',opacity: null};
-    ScrollReveal().reveal('.card', slideUp);
-  </script>
+    <script>
+      function scrollToQuote(){document.getElementById('quoteForm').scrollIntoView({behavior:'smooth',block:'center'})};
+      var slideUp = {distance: '150%',origin: 'bottom',opacity: null};
+      ScrollReveal().reveal('.card', slideUp);
+    </script>
+    <link rel="stylesheet" href="/assets/css/cookie-banner.css">
+    <div id="cookie-consent-root"></div>
+    <script src="/assets/js/cookie-banner.js" defer></script>
+    
 </body>
 </html>

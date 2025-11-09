@@ -1,0 +1,80 @@
+/* ------------------------------
+   Axis3D Legal Page Styles
+   ------------------------------ */
+
+:root {
+   --bg:#ffffff;
+   --ink:#0f1720;
+   --muted:#6b7178;
+   --accent:#1E2029;
+   --accent-2:#2b2f36;
+   --glass:rgba(15,23,32,0.06);
+   --maxw:1100px;
+   --radius:10px;
+   font-family: "Outfit", sans-serif;
+   font-optical-sizing: auto;
+   font-style: normal;
+   scroll-behavior: smooth;
+  --section-bg: #f8f8f8;
+  --text-color: #222;
+  --header-font: serif;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--bg);
+  margin: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--bg);
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+}
+
+h1, h2 {
+  font-family: var(--header-font);
+  color: var(--accent);
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  background: var(--section-bg);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--section-bg);
+  border-top: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.updated {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.back {
+  margin-top: 2rem;
+  text-align: center;
+}
