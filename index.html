@@ -3,6 +3,108 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://axis3d.tech/#org",
+      "name": "Axis3D",
+      "url": "https://axis3d.tech/",
+      "logo": "https://axis3d.tech/assets/img/logo-dark.png",
+      "description": "Axis3D provides custom 3D printing, rapid prototyping, design services and small-batch manufacturing in Ireland.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info.axis3d@gmail.com",
+        "contactType": "customer service"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://axis3d.tech/#local",
+      "name": "Axis3D",
+      "image": "https://axis3d.tech/assets/img/logo-dark.png",
+      "url": "https://axis3d.tech/",
+      "description": "Custom 3D printing, PLA/PETG/TPU fabrication, prototyping and small-run part production.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IE"
+      },
+      "email": "info.axis3d@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://axis3d.tech/#website",
+      "url": "https://axis3d.tech/",
+      "name": "Axis3D",
+      "publisher": {
+        "@id": "https://axis3d.tech/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://axis3d.tech/#webpage",
+      "url": "https://axis3d.tech/",
+      "name": "Axis3D – Custom 3D Printing",
+      "isPartOf": {
+        "@id": "https://axis3d.tech/#website"
+      },
+      "description": "Axis3D offers high-quality custom 3D printing services including prototyping, part repairs, modelling and industrial mechanisms.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://axis3d.tech/"
+        }]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://axis3d.tech/#service",
+      "serviceType": "3D Printing Service",
+      "provider": {
+        "@id": "https://axis3d.tech/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ireland"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "3D Printing Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Custom PLA Prints"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Custom PETG Prints"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "TPU Flexible Prints"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+  </script>
   
   <!-- Primary Meta Tags -->
   <title>Axis3D — Precision 3D Printing Dublin | Custom Prints, Prototypes & Parts</title>
